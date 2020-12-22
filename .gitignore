@@ -108,12 +108,14 @@ data
 .vscode
 .idea
 .DS_Store
+.history
 
 # custom
 *.pkl
 *.pkl.json
 *.log.json
 work_dirs/
+checkpoints/
 
 # Pytorch
 *.pth
