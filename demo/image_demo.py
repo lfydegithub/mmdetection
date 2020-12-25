@@ -8,17 +8,19 @@ def main():
     parser = ArgumentParser()
     parser.add_argument(
         '--img',
-        default='/home/holo/workspace/pyspace/mmdetection-lfy/demo/demo.jpg',
+        default='/media/holo/C022AA4B225A6D42/data/coco/2017/val2017/000000001000.jpg',
         help='Image file')
     parser.add_argument(
         '--config',
-        default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/vfnet/vfnet_r50_fpn_1x_coco.py',
+        # default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/vfnet/vfnet_r50_fpn_1x_coco.py',
         # default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/gfl/gfl_r50_fpn_1x_coco.py',
+        default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/fcos/fcos_r50_caffe_fpn_4x4_1x_coco.py',
         help='Config file')
     parser.add_argument(
         '--checkpoint',
-        default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/vfnet_r50_fpn_1x_coco_20201027-38db6f58.pth',
+        # default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/vfnet_r50_fpn_1x_coco_20201027-38db6f58.pth',
         # default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/gfl_r50_fpn_1x_coco_20200629_121244-25944287.pth',
+        default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/fcos_r50_caffe_fpn_1x_4gpu_20200218-c229552f.pth',
         help='Checkpoint file')
     parser.add_argument(
         '--device', default='cuda:0', help='Device used for inference')
