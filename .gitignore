@@ -115,7 +115,7 @@ data
 *.pkl.json
 *.log.json
 work_dirs/
-checkpoints/
+checkpoints
 
 # Pytorch
 *.pth
