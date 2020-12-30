@@ -14,13 +14,15 @@ def main():
         '--config',
         # default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/vfnet/vfnet_r50_fpn_1x_coco.py',
         # default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/gfl/gfl_r50_fpn_1x_coco.py',
-        default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/fcos/fcos_r50_caffe_fpn_4x4_1x_coco.py',
+        # default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/fcos/fcos_r50_caffe_fpn_4x4_1x_coco.py',
+        default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/fcos/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_4x4_1x_coco.py',
         help='Config file')
     parser.add_argument(
         '--checkpoint',
         # default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/vfnet_r50_fpn_1x_coco_20201027-38db6f58.pth',
         # default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/gfl_r50_fpn_1x_coco_20200629_121244-25944287.pth',
-        default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/fcos_r50_caffe_fpn_1x_4gpu_20200218-c229552f.pth',
+        # default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/fcos_r50_caffe_fpn_1x_4gpu_20200218-c229552f.pth',
+        default='/home/holo/workspace/pyspace/mmdetection-lfy/checkpoints/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_4x4_1x_coco_20200603-67b3859f.pth',
         help='Checkpoint file')
     parser.add_argument(
         '--device', default='cuda:0', help='Device used for inference')

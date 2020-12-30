@@ -22,9 +22,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
     parser.add_argument(
         '--config',
-        default='/home/holo/workspace/pyspace/mmdetection/configs/yolo/yolov3_d53_mstrain-608_273e_coco.py',
+        default='/home/holo/workspace/pyspace/mmdetection-lfy/configs/fcos/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_4x4_1x_coco copy.py',
         help='train config file path')
-    parser.add_argument('--work-dir', default='/home/holo/workspace/pyspace/mmdetection/work_dirs',
+    parser.add_argument('--work-dir', default=None,
                         help='the dir to save logs and models')
     parser.add_argument(
         '--resume-from', default=None, help='the checkpoint file to resume from')
@@ -124,11 +124,12 @@ def main():
         cfg.gpu_ids = range(world_size)
 
     # create work_dir
-    mmcv.mkdir_or_exist(osp.abspath(cfg.work_dir))
+    timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
+    cfg.work_dir = osp.join(osp.abspath(cfg.work_dir), timestamp)
+    mmcv.mkdir_or_exist(cfg.work_dir)
     # dump config
     cfg.dump(osp.join(cfg.work_dir, osp.basename(args.config)))
     # init the logger before other steps
-    timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
     log_file = osp.join(cfg.work_dir, f'{timestamp}.log')
     logger = get_root_logger(log_file=log_file, log_level=cfg.log_level)
 
